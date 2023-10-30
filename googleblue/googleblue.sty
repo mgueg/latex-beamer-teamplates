@@ -10,7 +10,7 @@
 \usecolortheme{whale}
 
 \setbeamerfont{block title}{size={}}
-\newfontfamily\plexcondensed{IBM Plex Sans Condensed}
+%\newfontfamily\plexcondensed{}
 
 % Itemize items: default (triangle), circle, square, ball
 \setbeamertemplate{itemize items}[circle]
@@ -41,10 +41,12 @@
 
 % Material Colors
 \definecolor{matred}{HTML}{DD4B39}
-\definecolor{matblue}{HTML}{2196F3}
-\definecolor{matbluelight}{HTML}{BBDEFB}
-\definecolor{matbluedark}{HTML}{1976D2}
-
+%\definecolor{matblue}{HTML}{2196F3}
+%\definecolor{matbluelight}{HTML}{BBDEFB}
+%\definecolor{matbluedark}{HTML}{1976D2}
+\definecolor{matblue}{RGB}{67,145,189}
+\definecolor{matbluelight}{RGB}{67,145,189}
+\definecolor{matbluedark}{RGB}{6,24,122}
 \setbeamercolor{structure}{fg=matbluedark}
 %\setbeamercolor{frametitle}{parent=subsection in head/foot}
 %\setbeamercolor{frametitle right}{parent=section in head/foot}
@@ -119,7 +121,7 @@
 {
   \leavevmode
   \begin{beamercolorbox}[wd=\paperwidth]{section in head/foot}
-    \plexcondensed
+    \normalfont %\plexcondensed
     \vskip5pt
     \hskip10pt
     \insertshorttitle
@@ -169,7 +171,7 @@
     \begin{minipage}[t]{\textwidth}
       \usebeamerfont{title} {\huge \inserttitle} \par
       \vskip4pt
-      \usebeamerfont{subtitle} {\small \plexcondensed \insertsubtitle}
+      \usebeamerfont{subtitle} {\small \normalfont \insertsubtitle}
     \end{minipage}
   \end{beamercolorbox}
 
