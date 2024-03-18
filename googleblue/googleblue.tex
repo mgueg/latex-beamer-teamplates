@@ -44,11 +44,23 @@
 \usepackage{fontspec}
 \setbeamercovered{transparent}
 
+\usepackage{animate}
+\usepackage[normalem]{ ulem }
+\usepackage{soul}
+\usepackage{bbding}
 
-\title[Beamer Slides]{\centering \includegraphics[width=1.5cm]{./figs/cnrs-logo_cnrs_2019_blanc} New Slides  \includegraphics[width=1.5cm]{./figs/logo_pprime.png}}
-%\subtitle{presentation with \texttt{\LaTeX} made easy\\ \texttt{\LaTeX} }
+\title[Beamer Slides]{\centering New Slides }
+\subtitle{presentation with \texttt{\LaTeX} made easy with \texttt{\LaTeX} }
 \author[MG]{\scriptsize \textcolor{gray}{Mikael Gueguen\\ <mikael.gueguen@ensma.fr>}}
 \date{Novembre, $2023$}
+
+
+\usepackage{tikz}
+%\setlength{\unitlength}{1cm}
+%\usepackage{pgfpages}
+\usetikzlibrary{shapes.geometric,shapes.arrows,decorations.pathmorphing}
+%\usetikzlibrary{matrix,chains,scopes,positioning,arrows,fit}
+%\usetikzlibrary{positioning}
 
 
 \begin{document}
@@ -127,112 +139,111 @@
 
 \section{Template}
 
-%\begin{frame}[fragile=singleslide]
-%  \frametitle{Template}
+\begin{frame}[fragile=singleslide]
+  \frametitle{Template}
+
+  Basic Beamer file structure:
+
+\begin{lstlisting}[language=TeX,multicols=2,basicstyle=\ttfamily\tiny,numbers=left]
+% !TEX program = xelatex
+\documentclass[aspectratio=169,UTF-8]{beamer}
+
+\usepackage{graphicx,hyperref}
+\usepackage{xcolor}
+\usefonttheme{serif}
+\usepackage{fontspec}
+\setmainfont{Helvetica Neue}
+
+\title[short title]{long title}
+\subtitle[short subtitle]{long subtitle}
+\author[short name]{long name}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}
+\frametitle{Outline}
+  \tableofcontents
+\end{frame}
+\section{Some Section}
+\begin{frame}
+  \frametitle{Section Title}
+  Section content
+\end{frame}
+\end{document}
+\end{lstlisting}
+
+\end{frame}
 %
-%  Basic Beamer file structure:
 %
-%\begin{lstlisting}[language=TeX,multicols=2,basicstyle=\ttfamily\tiny,numbers=left]
-%% !TEX program = xelatex
-%\documentclass[aspectratio=169,UTF-8]{ctexbeamer}
-%
-%\usepackage{graphicx,hyperref}
-%\usepackage{xcolor}
-%\usefonttheme{serif}
-%\usepackage{fontspec}
-%\setmainfont{Helvetica Neue}
-%\setCJKmainfont{PingFang SC}
-%
-%\title[short title]{long title}
-%\subtitle[short subtitle]{long subtitle}
-%\author[short name]{long name}
-%
-%\begin{document}
-%\begin{frame}
-%  \titlepage
-%\end{frame}
-%\begin{frame}
-%\frametitle{Outline}
-%  \tableofcontents
-%\end{frame}
-%\section{Some Section}
-%\begin{frame}
-%  \frametitle{Section Title}
-%  Section content
-%\end{frame}
-%\end{document}
-%\end{lstlisting}
-%
-%\end{frame}
-%
-%
-%\begin{frame}
-%  \frametitle{Insert Title Information}
-%
-%  \begin{block}{Commands To Change}
-%    \texttt{
-%    \begin{itemize}
-%      \item
-%        \textbackslash{}title[\alert{short title}]\{\alert{long title}\}
-%      \item
-%        \textbackslash{}subtitle[\alert{short subtitle}]\{\alert{long subtitle}\}
-%      \item
-%        \textbackslash{}author[\alert{short name}]\{\alert{long name}\}
-%      \item
-%        \textbackslash{}date[\alert{short date}]\{\alert{long date}\}
-%      \item
-%        \textbackslash{}institution[\alert{short name}]\{\alert{long name}\}
-%      \end{itemize}
-%    }
-%  \end{block}
-%
-%\end{frame}
+\begin{frame}
+  \frametitle{Insert Title Information}
+
+  \begin{block}{Commands To Change}
+    \texttt{
+    \begin{itemize}
+      \item
+        \textbackslash{}title[\alert{short title}]\{\alert{long title}\}
+      \item
+        \textbackslash{}subtitle[\alert{short subtitle}]\{\alert{long subtitle}\}
+      \item
+        \textbackslash{}author[\alert{short name}]\{\alert{long name}\}
+      \item
+        \textbackslash{}date[\alert{short date}]\{\alert{long date}\}
+      \item
+        \textbackslash{}institution[\alert{short name}]\{\alert{long name}\}
+      \end{itemize}
+    }
+  \end{block}
+
+\end{frame}
 
 
 \section{Frames}
 
-%\begin{frame}[fragile=singleslide]
-%  \frametitle{Frames}
-%
-%  \begin{itemize}
-%    \setlength{\itemsep}{8pt}
-%    \item Each Beamer project is made up of a series of frames.
-%    \item Each frame produces one or more slides, depending on the slide's overlays, which will be discussed later.
-%  \end{itemize}
-%
-%  \begin{block}{A Basic Frame}
-%
-%\begin{lstlisting}
-%\begin{frame}[<alignment>]
-%  \frametitle{Frame Title Goes Here}
-%  Frame body text and/or LATEX code
-%\end{frame}
-%\end{lstlisting}
-%
-%  \end{block}
-%
-%\end{frame}
-%
-%
-%\begin{frame}[fragile=singleslide]
-%  \frametitle{Frames}
-%
-%  \begin{itemize}
-%    \setlength{\itemsep}{8pt}
-%    \item Frames are very simple to make. Simply write your own text or \LaTeX{} code between the begin/end frame commands.
-%    \item The alignment option is centered \texttt{[c]} by default. The values \texttt{[t]} (top align) and \texttt{[b]} (bottom align) are also accepted.
-%  \end{itemize}
-%
-%  \begin{block}{A Basic Frame}
-%\begin{lstlisting}
-%\begin{frame}[t]
-%  \frametitle{Algorithmic Combinatorics on Words}
-%  \textit{Words}, or strings of symbols over..
-%\end{frame}
-%\end{lstlisting}
-%  \end{block}
-%
-%\end{frame}
+\begin{frame}[fragile=singleslide]
+  \frametitle{Frames}
+
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item Each Beamer project is made up of a series of frames.
+    \item Each frame produces one or more slides, depending on the slide's overlays, which will be discussed later.
+  \end{itemize}
+
+  \begin{block}{A Basic Frame}
+
+\begin{lstlisting}
+\begin{frame}[<alignment>]
+  \frametitle{Frame Title Goes Here}
+  Frame body text and/or LATEX code
+\end{frame}
+\end{lstlisting}
+
+  \end{block}
+
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Frames}
+
+  \begin{itemize}
+    \setlength{\itemsep}{8pt}
+    \item Frames are very simple to make. Simply write your own text or \LaTeX{} code between the begin/end frame commands.
+    \item The alignment option is centered \texttt{[c]} by default. The values \texttt{[t]} (top align) and \texttt{[b]} (bottom align) are also accepted.
+  \end{itemize}
+
+  \begin{block}{A Basic Frame}
+\begin{lstlisting}
+\begin{frame}[t]
+  \frametitle{Algorithmic Combinatorics on Words}
+  \textit{Words}, or strings of symbols over..
+\end{frame}
+\end{lstlisting}
+  \end{block}
+
+\end{frame}
 %
 %
 %\begin{frame}[fragile]
@@ -368,40 +379,36 @@
 %\end{frame}
 %
 %
-%\begin{frame}[fragile]
-%  \frametitle{Fonts}
-%  \begin{columns}[t]
-%    \begin{column}{.6\textwidth}
-%      \tiny
-%\begin{lstlisting}
-%\usepackage{fontspec}
-%%\setmainfont{Helvetica Neue}
-%\setmainfont{Arial}
-%\setCJKmainfont{Microsoft YaHei}
-%%\setCJKmainfont[BoldFont=STHeiti]{STHeiti}
-%%\setCJKsansfont[BoldFont=STHeiti]{STHeiti}
-%%\setCJKmonofont{STKaiti}
-%\end{lstlisting}
-%    \end{column}
-%    \begin{column}{.4\textwidth}
-%
-%      \begin{tabularx}{\textwidth}{l}
-%        \tiny{\verb|\tiny|}\\
-%        \scriptsize{\verb|\scriptsize|}\\
-%        \footnotesize{\verb|\footnotesize|}\\
-%        \small{\verb|\small|}\\
-%        \normalsize{\verb|\normalsize|}\\
-%        \large{\verb|\large|}\\
-%        \Large{\verb|\Large|}\\
-%        \LARGE{\verb|\LARGE|}\\
-%        \huge{\verb|\huge|}\\
-%        \Huge{\verb|\Huge|}
-%      \end{tabularx}
-%
-%    \end{column}
-%  \end{columns}
-%
-%\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Fonts}
+  \begin{columns}[t]
+    \begin{column}{.6\textwidth}
+      \tiny
+\begin{lstlisting}
+\usepackage{fontspec}
+\setmainfont{Helvetica Neue}
+bla
+\end{lstlisting}
+    \end{column}
+    \begin{column}{.4\textwidth}
+
+      \begin{tabularx}{\textwidth}{l}
+        \tiny{\verb|\tiny|}\\
+        \scriptsize{\verb|\scriptsize|}\\
+        \footnotesize{\verb|\footnotesize|}\\
+        \small{\verb|\small|}\\
+        \normalsize{\verb|\normalsize|}\\
+        \large{\verb|\large|}\\
+        \Large{\verb|\Large|}\\
+        \LARGE{\verb|\LARGE|}\\
+        \huge{\verb|\huge|}\\
+        \Huge{\verb|\Huge|}
+      \end{tabularx}
+
+    \end{column}
+  \end{columns}
+
+\end{frame}
 %
 %
 %\begin{frame}[fragile]
@@ -486,41 +493,41 @@
 %\end{frame}
 
 
-%\section{Structures}
-%
-%\begin{frame}[fragile]
-%  \frametitle{Structure - Tables}
-%
-%
-%    \begin{columns}
-%    \begin{column}{.7\textwidth}
-%      \small
-%\begin{lstlisting}
-%\begin{tabular}{|c|r|r|}
-%  \hline
-%  \multirow{2}*{姓名} & \multicolumn{2}{c|}{成绩}\\
-%  \cline{2-3}
-%                     & 语文 & 数学\\
-%  \hline
-%  张三                & 87 & 100\\
-%  \hline
-%\end{tabular}
-%\end{lstlisting}
-%    \end{column}
-%    \begin{column}{.3\textwidth}
-%        \begin{tabular}{|c|r|r|}
-%          \hline
-%          \multirow{2}*{姓名} & \multicolumn{2}{c|}{成绩}\\
-%          \cline{2-3}
-%                             & 语文 & 数学\\
-%          \hline
-%          张三                & 87 & 100\\
-%          \hline
-%        \end{tabular}
-%    \end{column}
-%  \end{columns}
-%
-%\end{frame}
+\section{Structures}
+
+\begin{frame}[fragile]
+  \frametitle{Structure - Tables}
+
+
+    \begin{columns}
+    \begin{column}{.7\textwidth}
+      \small
+\begin{lstlisting}
+\begin{tabular}{|c|r|r|}
+  \hline
+  \multirow{2}*{AA} & \multicolumn{2}{c|}{BB}\\
+  \cline{2-3}
+                     & CC & DD\\
+  \hline
+  EE               & 87 & 100\\
+  \hline
+\end{tabular}
+\end{lstlisting}
+    \end{column}
+    \begin{column}{.3\textwidth}
+        \begin{tabular}{|c|r|r|}
+          \hline
+          \multirow{2}*{AA} & \multicolumn{2}{c|}{AB}\\
+          \cline{2-3}
+                             & AA & BB\\
+          \hline
+          DD              & 87 & 100\\
+          \hline
+        \end{tabular}
+    \end{column}
+  \end{columns}
+
+\end{frame}
 %
 %
 %\begin{frame}[fragile]
@@ -547,39 +554,39 @@
   \frametitle{Structure - Boxes}
 
   \centering
-  \colorbox{yellow}{黄色盒子}
+  \colorbox{yellow}{AAA}
   \quad
-  \colorbox{red}{红色盒子}
+  \colorbox{red}{CCC}
   \quad
-  \colorbox{green}{绿色盒子}
+  \colorbox{green}{DDD}
   \quad
-  \colorbox{blue}{\textcolor{white}{蓝色盒子}}
+  \colorbox{blue}{\textcolor{white}{BBB}}
 \end{frame}
 
 
-%\section{Math}
-%
-%\begin{frame}
-%  \frametitle{Math}
-%
-%  \begin{wrapfigure}{r}{0.2\textwidth}
-%    \begin{figure}[t]
-%      \centering
-%      \includegraphics{./figs/taipei101.jpg}
-%    \end{figure}
-%  \end{wrapfigure}
-%
-%  The mass-energy equivalence is described by the famous equation
-%
-%  $$E=mc^2$$
-%
-%  discovered in 1905 by Albert Einstein. In natural units ($c=1$), the formula expresses the identity
-%
-%  \begin{equation}
-%    E=m
-%  \end{equation}
-%
-%\end{frame}
+\section{Math}
+
+\begin{frame}
+  \frametitle{Math}
+
+  \begin{wrapfigure}{r}{0.2\textwidth}
+    \begin{figure}[t]
+      \centering
+      \includegraphics[width=0.1\textwidth]{./figs/mactexlogoX5.png}
+    \end{figure}
+  \end{wrapfigure}
+
+  The mass-energy equivalence is described by the famous equation
+
+  $$E=mc^2$$
+
+  discovered in 1905 by Albert Einstein. In natural units ($c=1$), the formula expresses the identity
+
+  \begin{equation}
+    E=m
+  \end{equation}
+
+\end{frame}
 
 
 \section{Graphics}

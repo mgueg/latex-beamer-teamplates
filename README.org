@@ -1,15 +1,28 @@
-* My LaTeX Beamer Templates
+* My LaTeX Beamer Template
 
 ** [[./googleblue/][GoogleBlue]]
 
-*** Prerequisites
+** Usage
 
-*Fonts*
+- Work with xelatex
 
-- Minion Pro
-- Myriad Pro
-- Courier Std
-- [[https://github.com/IBM/plex][IBM Plex Sans Condensed]]
-- [[https://github.com/adobe-fonts/source-han-sans][Source Han Sans (思源黑体)]]
-- Adobe Kaiti Std
-- Adobe Fangsong Std
+```
+% !TEX program = xelatex
+```
+
+- clone it :
+
+```
+$ git clone git@github.com:mgueg/latex-beamer-teamplates.git
+```
+
+- add `\usepackage{}` in your latex file;
+
+```
+\usepackage{hyperref,/path/to/latex-beamer-teamplates/googleblue/googleblue}
+```
+
+
+** Improvements
+
+- the backgroung title image is hardcoded in googleblue.sty : need to be changed

@@ -8,6 +8,8 @@
 \useinnertheme[shadow=false]{rounded}
 \usecolortheme{orchid}
 \usecolortheme{whale}
+%\usepackage{graphicx}
+
 
 \setbeamerfont{block title}{size={}}
 %\newfontfamily\plexcondensed{}
@@ -37,7 +39,7 @@
 
 % Colors
 %\definecolor{sapred}{RGB}{130,36,51}
-\definecolor{sapblue}{RGB}{0,103,120}
+\definecolor{sapblue}{RGB}{0,25,127}
 
 % Material Colors
 \definecolor{matred}{HTML}{DD4B39}
@@ -45,8 +47,8 @@
 %\definecolor{matbluelight}{HTML}{BBDEFB}
 %\definecolor{matbluedark}{HTML}{1976D2}
 \definecolor{matblue}{RGB}{67,145,189}
-\definecolor{matbluelight}{RGB}{67,145,189}
-\definecolor{matbluedark}{RGB}{6,24,122}
+\definecolor{matbluelight}{RGB}{16,147,193}
+\definecolor{matbluedark}{RGB}{0,25,127}
 \setbeamercolor{structure}{fg=matbluedark}
 %\setbeamercolor{frametitle}{parent=subsection in head/foot}
 %\setbeamercolor{frametitle right}{parent=section in head/foot}
@@ -78,22 +80,22 @@
 
 \usepackage{tcolorbox}  
 \tcbuselibrary{skins}                                 % preamble 
-\usepackage{tikz}                                     %
-\usetikzlibrary{shadows, shadings}                    %
+%\usepackage{tikz}                                     %
+%\usetikzlibrary{shadows, shadings}                    %
 
-\tikzset{myshadow/.style={                            % custom shadow with tikz
-    opacity=.16,
-    shadow xshift=0.03,
-    shadow yshift=-0.03,
-    shade,
-    shading=axis,
-    shading angle=315
-  }
-} 
+%\tikzset{myshadow/.style={                            % custom shadow with tikz
+%    opacity=.16,
+%    shadow xshift=0.03,
+%    shadow yshift=-0.03,
+%    shade,
+%    shading=axis,
+%    shading angle=315
+%  }
+%} 
 
 \tcbset{                                              % set a custom tcolorbox
   skin=enhanced,                                      % enables use of shadows
-  frame style={fill=matblue,drop shadow={myshadow}},  % sets the frame color and the shadow properties
+  frame style={fill=matblue},  % sets the frame color and the shadow properties
   bottom=5pt,                                         % distance between the body text and the bottom frame
   top=5pt,                                            % distance between the body text and the top frame
   boxrule=0mm,                                        % frame width
@@ -151,32 +153,61 @@
 
 
 % title page
-\defbeamertemplate*{title page}{my theme}[1][]
-{
+%\defbeamertemplate*{title page}{my theme}[1][]
+%{
+%
+%  \nointerlineskip
+%
+%  % author
+%  \usebeamerfont{subtitle}
+%  \begin{beamercolorbox}[sep=2em,wd=\paperwidth,dp=0.5cm,right]{thead}
+%\begin{tabular}{p{0.54\textwidth} p{0.54\textwidth}}   
+% \includegraphics[width=0.12\textwidth]{./figs/logo_pprime.png}  &   \usebeamerfont{author}   \insertauthor
+%\end{tabular}
+%  \end{beamercolorbox}
+%
+%  \nointerlineskip
+%
+%  % title
+%  \setbeamercolor{postit}{fg=white,bg=matblue}
+%  \begin{beamercolorbox}[sep=2em,wd=\paperwidth,ht=3.5cm, dp=2.25cm]{postit}
+%    \begin{minipage}[t]{\textwidth}
+%      \usebeamerfont{title} {\huge \inserttitle} \par
+%      \vskip4pt
+%      \usebeamerfont{subtitle} {\small \normalfont \insertsubtitle}
+%    \end{minipage}
+%  \end{beamercolorbox}
+%
+%}
 
-  \nointerlineskip
+\pgfdeclareimage[height=1.04\paperheight]{ppbackground}{/Users/mik/Documents/latex-beamer-teamplates/googleblue//figs/background.png}
 
-  % author
-  \usebeamerfont{subtitle}
-  \begin{beamercolorbox}[sep=2em,wd=\paperwidth,dp=0.5cm,right]{thead}
-  \begin{tabular}{p{0.54\textwidth} p{0.54\textwidth}}   
- \includegraphics[width=0.12\textwidth]{/Users/mik/Documents/latex-beamer-teamplates/googleblue/figs/logo_pprime.png}  &   \usebeamerfont{author}   \insertauthor
-\end{tabular}
-  \end{beamercolorbox}
-
-  \nointerlineskip
-
+\setbeamertemplate{title page}{
+        \begin{picture}(0,0)
+            \put(-30,-163){%
+                \pgfuseimage{ppbackground}
+            }
+%
+%            \put(0,-110.7){%
+%                \begin{minipage}[b][45mm][t]{226mm}
+%                    \usebeamerfont{title}{\inserttitle\par}
+%                \end{minipage}
+%            }
+            \end{picture}
   % title
-  \setbeamercolor{postit}{fg=white,bg=matblue}
-  \begin{beamercolorbox}[sep=2em,wd=\paperwidth,ht=3.5cm, dp=2.25cm]{postit}
+  \setbeamercolor{postit}{fg=white}
+  \begin{beamercolorbox}[sep=2em,wd=\paperwidth,ht=0.5cm, dp=2.25cm]{postit}
     \begin{minipage}[t]{\textwidth}
+    \vspace{2cm}
       \usebeamerfont{title} {\huge \inserttitle} \par
       \vskip4pt
       \usebeamerfont{subtitle} {\small \normalfont \insertsubtitle}
+     \vskip4pt
+       \usebeamerfont{author}  { \insertauthor }
     \end{minipage}
   \end{beamercolorbox}
-
-}
+            
+    }
 
 
 % frametitle
