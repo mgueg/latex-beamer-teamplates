@@ -2,9 +2,12 @@
 
 ** [[./googleblue/][GoogleBlue]]
 
+- adaptation for new pprime institute theme (www.pprime.fr)
+
 ** Usage
 
-- Work with xelatex
+- Work with xelatex 
+- See `googleblue.sty` and `google.tex` in `./googleblue/` directory to adapt to your own latex beamer file
 
 ```
 % !TEX program = xelatex
@@ -26,3 +29,4 @@ $ git clone git@github.com:mgueg/latex-beamer-teamplates.git
 ** Improvements
 
 - the backgroung title image is hardcoded in googleblue.sty : need to be changed
+
