@@ -1,10 +1,10 @@
 # My LaTeX Beamer Template
 
-## [[./pprime/][Beamer PPrime theme]]
+## [Beamer PPrime theme](./pprime/)
 
 - adaptation for new pprime institute theme (www.pprime.fr)
 
-## [[./poster/][Beamer Pprime Poster theme]]
+## [Beamer Pprime Poster theme](./pprime/)
 
 - adaptation for new pprime institute theme (www.pprime.fr)
 
