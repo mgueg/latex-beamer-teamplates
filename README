@@ -1,14 +1,14 @@
-* My LaTeX Beamer Template
+# My LaTeX Beamer Template
 
-** [[./pprime/][Beamer PPrime theme]]
-
-- adaptation for new pprime institute theme (www.pprime.fr)
-
-** [[./poster/][Beamer Pprime Poster theme]]
+## [[./pprime/][Beamer PPrime theme]]
 
 - adaptation for new pprime institute theme (www.pprime.fr)
 
-** Usage
+## [[./poster/][Beamer Pprime Poster theme]]
+
+- adaptation for new pprime institute theme (www.pprime.fr)
+
+## Usage
 
 - Work with xelatex 
 - See `pprime.sty` and `google.tex` in `./pprime/` directory to adapt to your own latex beamer file
@@ -30,7 +30,7 @@ $ git clone git@github.com:mgueg/latex-beamer-teamplates.git
 ```
 
 
-** Improvements
+## Improvements
 
 - some theme images (background;logo) are hardcoded in `.sty` : need to be changed
 
