@@ -4,7 +4,7 @@
 
 - adaptation for new pprime institute theme (www.pprime.fr)
 
-## [Beamer Pprime Poster theme](./pprime/)
+## [Beamer Pprime Poster theme](./poster/)
 
 - adaptation for new pprime institute theme (www.pprime.fr)
 
