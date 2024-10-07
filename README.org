@@ -1,13 +1,17 @@
 * My LaTeX Beamer Template
 
-** [[./googleblue/][GoogleBlue]]
+** [[./pprime/][Beamer PPrime theme]]
+
+- adaptation for new pprime institute theme (www.pprime.fr)
+
+** [[./poster/][Beamer Pprime Poster theme]]
 
 - adaptation for new pprime institute theme (www.pprime.fr)
 
 ** Usage
 
 - Work with xelatex 
-- See `googleblue.sty` and `google.tex` in `./googleblue/` directory to adapt to your own latex beamer file
+- See `pprime.sty` and `google.tex` in `./pprime/` directory to adapt to your own latex beamer file
 
 ```
 % !TEX program = xelatex
@@ -22,11 +26,11 @@ $ git clone git@github.com:mgueg/latex-beamer-teamplates.git
 - add `\usepackage{}` in your latex file;
 
 ```
-\usepackage{hyperref,/path/to/latex-beamer-teamplates/googleblue/googleblue}
+\usepackage{hyperref,/path/to/latex-beamer-teamplates/pprime/pprime}
 ```
 
 
 ** Improvements
 
-- the backgroung title image is hardcoded in googleblue.sty : need to be changed
+- some theme images (background;logo) are hardcoded in `.sty` : need to be changed
 
